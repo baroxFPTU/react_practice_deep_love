@@ -1,0 +1,16 @@
+.areaPlayer {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.areaPlayer[data-player-id="1"] {
+  background-color: #84badb;
+}
+
+.areaPlayer[data-player-id="2"] {
+  background-color: #f8a6b3;
+}
