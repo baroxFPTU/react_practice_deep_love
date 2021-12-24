@@ -36,7 +36,6 @@ function reducer(state, action) {
         isStart: true,
       };
     case UPDATE_QUESTIONS:
-      console.log(state);
       return {
         ...state,
         listQuestions: [...action.newQuestions],

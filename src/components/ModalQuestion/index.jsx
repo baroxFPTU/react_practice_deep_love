@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import classes from './ModalQuestion.module.css';
+import thumbsUp from '../../assets/icon/thumbs-up.svg'
 
 ModalQuestion.propTypes = {
   question: PropTypes.string
@@ -18,7 +19,7 @@ function randomQuestion(questions) {
  return [_randomQuestion, filteredQuestions];
 }
 
-function ModalQuestion({questions, onUpdateQuestions}) {
+function ModalQuestion({questions, onUpdateQuestions, playerTurn}) {
   const [question, setQuestion] = useState(null);
 
   useEffect(() => {
@@ -31,7 +32,8 @@ function ModalQuestion({questions, onUpdateQuestions}) {
   }, [])
 
   return (
-    <div className={classes.modalQuestion}>
+    <div className={classes.modalQuestion} data-player-turn={playerTurn}>
+      <div className="icon"></div>
       {question ? (<h3>Câu hỏi: {question.content}</h3> ): 'Đã hết câu hỏi'}
     </div>
   );

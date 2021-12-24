@@ -5,12 +5,106 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  font-weight: bold;
 }
 
 .areaPlayer[data-player-id="1"] {
+  transform: rotate(180deg);
+
   background-color: #84badb;
 }
 
 .areaPlayer[data-player-id="2"] {
   background-color: #f8a6b3;
+}
+
+.buttonReady {
+  position: absolute;
+
+  font-size: clamp(25px, 2vw, 2rem);
+  color: #fff;
+  outline: none;
+
+  width: calc(100vh / 4);
+  height: calc(100vh / 7.8);
+  border-bottom-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+
+  outline: none;
+  border: 0px;
+  transition: all 0.25s ease-in-out;
+  top: 0;
+}
+
+.buttonReady[data-player-id="1"] {
+  background-color: #f8a6b3;
+}
+
+.buttonReady[data-player-id="2"] {
+  background-color: #84badb;
+}
+.buttonReady:hover {
+  background-color: #fff;
+  color: #c1c1c1;
+}
+
+.buttonReady:focus,
+.buttonReady:active {
+  animation: clicked 0.5s ease-in-out;
+}
+
+.buttonReady:disabled,
+.buttonReady:disabled:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.acceptButton {
+  width: calc(100vh / 5);
+  height: calc(100vh / 5);
+  border: 3px solid #fff;
+  border-radius: 100%;
+  background-color: transparent;
+  font-size: clamp(25px, 2vw, 2rem);
+  color: #fff;
+}
+
+.acceptButton:focus {
+  animation: clicked 0.5s ease-in-out;
+}
+
+.acceptButton:hover,
+.acceptButton:focus,
+.acceptButton:active {
+  background-color: #fff;
+  color: #333;
+}
+
+@keyframes clicked {
+  0% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.icon embed {
+  width: 40px;
+  height: 40px;
+  filter: invert();
+}
+
+.readyCaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
 }

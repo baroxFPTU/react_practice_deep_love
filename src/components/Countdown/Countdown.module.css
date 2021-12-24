@@ -1,0 +1,16 @@
+.countdown {
+  width: calc(100vh / 5);
+  height: calc(100vh / 5);
+  border-radius: 100%;
+  border: 3px solid #ffffff;
+  display: flex;
+  font-weight: normal;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(25px, 3rem, 3rem);
+}
+
+.countdown[data-player-id="1"] {
+  transform: rotate(180deg);
+}
