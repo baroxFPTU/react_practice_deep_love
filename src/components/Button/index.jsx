@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
 Button.propTypes = {
-  
+  once: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 function Button({children,once, onClick, ...props}) {

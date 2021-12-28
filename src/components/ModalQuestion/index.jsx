@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import classes from './ModalQuestion.module.css';
-import thumbsUp from '../../assets/icon/thumbs-up.svg'
 
 ModalQuestion.propTypes = {
   question: PropTypes.string

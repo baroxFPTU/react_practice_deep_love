@@ -1,10 +1,4 @@
-import {
-  INITIAL_STATE,
-  READY,
-  RESTART,
-  SHOW_QUESTION,
-  UPDATE_QUESTIONS,
-} from "./constant";
+import { READY, RESTART, SHOW_QUESTION, UPDATE_QUESTIONS } from "./constant";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -23,7 +17,7 @@ function reducer(state, action) {
         playerTurn: action.playerTurn,
       };
     case READY:
-      if (state.isReady !== 2) {
+      if (state.isReady < 1) {
         return {
           ...state,
           isReady: (state.isReady += 1),

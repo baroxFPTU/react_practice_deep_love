@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useCountdown } from '../../store';
-import classes from './Countdown.module.css'
+import classes from './Countdown.module.css';
 
 Countdown.propTypes = {
-  
+  amount: PropTypes.number,
+  fallback: PropTypes.func,
+  playerId: PropTypes.string,
 };
 
 function Countdown({amount, fallback, playerId}) {

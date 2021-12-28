@@ -1,5 +1,5 @@
-import React, { useReducer } from "react";
 import "./App.css";
+import React, { useReducer } from "react";
 import AreaPlayer from "./components/AreaPlayer";
 import ModalQuestion from "./components/ModalQuestion";
 import { actions, GameReducer } from "./store";

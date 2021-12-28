@@ -11,7 +11,6 @@
 
 .areaPlayer[data-player-id="1"] {
   transform: rotate(180deg);
-
   background-color: #84badb;
 }
 
@@ -81,6 +80,19 @@
   color: #333;
 }
 
+.icon img {
+  width: 40px;
+  height: 40px;
+  filter: invert();
+}
+
+.readyCaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+}
+
 @keyframes clicked {
   0% {
     transform: scale(0.9);
@@ -94,17 +106,4 @@
   100% {
     transform: scale(1);
   }
-}
-
-.icon embed {
-  width: 40px;
-  height: 40px;
-  filter: invert();
-}
-
-.readyCaption {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
 }
