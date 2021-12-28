@@ -1,13 +1,27 @@
 import "./App.css";
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import AreaPlayer from "./components/AreaPlayer";
 import ModalQuestion from "./components/ModalQuestion";
 import { actions, GameReducer } from "./store";
-import { INITIAL_STATE } from "./store/constant";
+import { INITIAL_STATE, API_KEY } from "./store/constant";
 
 function App() {
   const [state, dispatch] = useReducer(GameReducer, INITIAL_STATE);
   const { isStart, isShowQuestion, listQuestions, playerTurn } = state;
+
+  useEffect(() => {
+    async function getQuestions() {
+      const response = await fetch(API_KEY);
+      const data = await response.json();
+
+      dispatch(actions.updateQuestions(data));
+    }
+    try {
+      getQuestions();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   const handleUpdateQuestions = (newQuestions) => {
     dispatch(actions.updateQuestions(newQuestions));
