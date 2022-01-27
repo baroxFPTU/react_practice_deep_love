@@ -28,7 +28,7 @@ function ModalQuestion({questions, onUpdateQuestions, playerTurn}) {
     return () => {
       setQuestion(null)
     }
-  }, [])
+  }, []);
 
   return (
     <div className={classes.modalQuestion} data-player-turn={playerTurn}>

@@ -13,7 +13,7 @@ function useCountdown(amount, callback) {
     return () => {
       return clearInterval(timerId);
     };
-  }, [countdown]);
+  }, [countdown, callback]);
 
   return [countdown];
 }
