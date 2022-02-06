@@ -11,9 +11,13 @@ function Home(props) {
   useEffect(() => {
     async function getQuestions() {
       const response = await fetch(`${API_KEY}/questions.json`);
-      const data = await response.json();
+      const responseData = await response.json();
+      const transformedData = [];
+      for (const key in responseData) {
+        transformedData.push(responseData[key]);
+      }
 
-      dispatch(actions.updateQuestions(data));
+      dispatch(actions.updateQuestions(transformedData));
     }
     try {
       getQuestions();
