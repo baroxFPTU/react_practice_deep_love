@@ -1,5 +1,5 @@
 const API_KEY =
-  "https://deep-love-app-default-rtdb.asia-southeast1.firebasedatabase.app/questions.json";
+  "https://deep-love-app-default-rtdb.asia-southeast1.firebasedatabase.app";
 
 const INITIAL_STATE = {
   isReady: 0,

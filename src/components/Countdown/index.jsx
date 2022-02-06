@@ -11,7 +11,6 @@ Countdown.propTypes = {
 
 function Countdown({amount, fallback, playerId}) {
   const [countdown] = useCountdown(amount, fallback);
-
   return (
     <div className={classes.countdown} data-player-id={playerId}>
       {countdown}

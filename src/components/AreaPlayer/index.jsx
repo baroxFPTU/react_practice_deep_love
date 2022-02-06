@@ -1,13 +1,9 @@
-import React, {useCallbackack} from 'react';
+import React from 'react';
 import thumbsUp from '../../assets/icon/thumbs-up.svg';
 import { actions, randomPlayerId } from "../../store";
 import Button from '../Button';
 import Countdown from '../Countdown';
 import classes from './AreaPlayer.module.css';
-
-AreaPlayer.propTypes = {
-  
-};
 
 function AreaPlayer({playerId, isStart, answerTurn, dispatch}) {
   const isMe = answerTurn === playerId;
@@ -34,7 +30,7 @@ function AreaPlayer({playerId, isStart, answerTurn, dispatch}) {
   if (answerTurn) {
     playSection = (
       <>
-        {(isMe) ?<> <Countdown amount={30} fallback={finish}/></>: <button className={classes.acceptButton} onClick={handleRestart}>Accept</button>}
+        {(isMe) ?<><Countdown amount={30} fallback={finish}/></>: <button className={classes.acceptButton} onClick={handleRestart}>Accept</button>}
       </>
     )
   } else {
